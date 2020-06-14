@@ -21,10 +21,8 @@ time.sleep(15)  # TODO: figure how to do this better
 
 
 @pytest.fixture(scope='module')
-
-
 def browser():
-    browser_name = ip = os.getenv('BROWSER')
+    browser_name = ip = os.getenv('BROWSER') # noqa
     browser = webdriver.Remote(
         command_executor='http://selenium_hub:4444/wd/hub',
         desired_capabilities={'browserName': browser_name},

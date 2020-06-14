@@ -1,9 +1,9 @@
-import os
 import json
+import os
 import random
 import socket
 
-from flask import Flask, render_template, request, make_response, g
+from flask import Flask, g, make_response, render_template, request
 from redis import Redis
 
 
@@ -13,13 +13,15 @@ hostname = socket.gethostname()
 
 app = Flask(__name__)
 
+
 def get_redis():
     if not hasattr(g, 'redis'):
         redis_host = os.getenv('REDIS_HOST')
         g.redis = Redis(host=redis_host, db=0, socket_timeout=5)
     return g.redis
 
-@app.route("/", methods=['POST','GET'])
+
+@app.route("/", methods=['POST', 'GET'])
 def hello():
     voter_id = request.cookies.get('voter_id')
     if not voter_id:
