@@ -1,9 +1,11 @@
+import os
+import json
+import random
+import socket
+
 from flask import Flask, render_template, request, make_response, g
 from redis import Redis
-import os
-import socket
-import random
-import json
+
 
 option_a = os.getenv('OPTION_A', "The Unicorn")
 option_b = os.getenv('OPTION_B', "Young Sheldon")

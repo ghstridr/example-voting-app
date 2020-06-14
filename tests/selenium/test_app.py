@@ -19,7 +19,10 @@ result_endpoint_ip = os.getenv('RESULT_ENDPOINT_IP')
 # Give Selenium Hub time to start
 time.sleep(15)  # TODO: figure how to do this better
 
+
 @pytest.fixture(scope='module')
+
+
 def browser():
     browser_name = ip = os.getenv('BROWSER')
     browser = webdriver.Remote(
@@ -35,6 +38,7 @@ def test_confirm_vote_title(browser):
     option_a = "The Unicorn"
     option_b = "Young Sheldon"
     assert "{} vs {}!".format(option_a, option_b) in browser.title
+
 
 def test_confirm_vote_choice_form(browser):
     browser.get("http://{}:80".format(vote_endpoint_ip))
