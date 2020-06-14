@@ -4,6 +4,7 @@ import random
 import socket
 
 from flask import Flask, g, make_response, render_template, request
+
 from redis import Redis
 
 
