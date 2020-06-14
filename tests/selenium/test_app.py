@@ -6,12 +6,12 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.common.exceptions import (
-    InvalidSelectorException,
-    NoSuchElementException,
-    ElementNotVisibleException,
-    ElementNotInteractableException,
-    WebDriverException)
+from selenium.common.exceptions import (  # noqa
+    InvalidSelectorException,  # noqa
+    NoSuchElementException,  # noqa
+    ElementNotVisibleException,  # noqa
+    ElementNotInteractableException,  # noqa
+    WebDriverException) # noqa
 
 vote_endpoint_ip = os.getenv('VOTE_ENDPOINT_IP')
 result_endpoint_ip = os.getenv('RESULT_ENDPOINT_IP')
