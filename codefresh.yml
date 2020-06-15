@@ -21,6 +21,7 @@ steps:
     image: alpine
     stage: "Prepare Kubernetes Cluster"
     commands:
+      - apk add bash
       - /bin/bash
       - cf_export KUBERNETES_CLUSTER_NAME=${{KUBERNETES_CLUSTER_NAME}} KUBERNETES_NAMESPACE=${{KUBERNETES_NAMESPACE}}
 
