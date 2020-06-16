@@ -21,7 +21,7 @@ steps:
     image: ubuntu:bionic
     stage: "Prepare Kubernetes Cluster"
     commands:
-      - cf_export KUBERNETES_CLUSTER_NAME=${{KUBERNETES_CLUSTER_NAME}} KUBERNETES_NAMESPACE=${{KUBERNETES_NAMESPACE}}
+      - cf_export KUBERNETES_CLUSTER_NAME="${{KUBERNETES_CLUSTER_NAME}}" KUBERNETES_NAMESPACE="${{KUBERNETES_NAMESPACE}}"
 
 # Create 'codefresh-demo' Kubernetes Namespace
 
